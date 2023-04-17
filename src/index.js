@@ -52,7 +52,6 @@ app.use(flash())
 
 //routes
 
-app.use(require('./routes/index'));
 app.use(require('./routes/users'));
 app.use(require('./routes/addProducts'));
 app.use(require('./routes/products'));
