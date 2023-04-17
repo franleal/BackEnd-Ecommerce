@@ -7,9 +7,9 @@ router.get('/register',renderUserRegister)
 
 router.post('/register',addUser)
 
-router.get('/login',renderloginUser)
+router.get('/',renderloginUser)
 
-router.post('/login',loginUser)
+router.post('/',loginUser)
 
 router.get('/logout',logOut)
 

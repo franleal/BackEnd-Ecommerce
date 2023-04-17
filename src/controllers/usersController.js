@@ -38,7 +38,7 @@ usersController.addUser = async(req,res)=>{
         newUser.password = await newUser.encryptPassword(password);
         await newUser.save()
         req.flash('success_msg', 'El usuario fue registrado exitosamente')
-        res.redirect("/login")
+        res.redirect("/")
     }
 }
 
@@ -48,7 +48,7 @@ usersController.renderloginUser = (req,res)=>{
 }
 
 usersController.loginUser = passport.authenticate('local',{
-    failureRedirect:'/login',
+    failureRedirect:'/',
     successRedirect:'/products',
     failureFlash:true
 
