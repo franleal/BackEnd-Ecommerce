@@ -1,0 +1,22 @@
+
+    <div class="container">
+        
+            {{#if carProducts}}
+                {{#each carProducts}}
+                    <div class="container-cards-all " >
+                        <div class="card container_card" style="width: 18rem;">
+                            <img src="{{thumbnail}}"class="card-img-top" alt="..."> 
+                            <div class="card-body">
+                            <h5 class="card-title">{{title}}</h5>
+                            <p class="card-text">{{description}}</p>
+                            <p class="card-text">{{amount}}</p>
+                        </div>
+                    </div>
+                {{/each}}
+            {{else}}
+                <h3>No hay productos agregados!</h3>
+            {{/if}}
+            <a href="/orders" class="btn btn-success" type="submit" >Generar orden de compra</a>
+    </div>
+    
+    

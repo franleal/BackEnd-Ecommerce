@@ -1,0 +1,30 @@
+body{
+    background-color: brown;
+}
+
+.container{
+    background-color: coral;
+    margin: auto;
+    width: 500px;
+    height: 700px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.chat{
+    background-color:cornflowerblue;
+    margin: auto;
+    width: 300px;
+    min-height: 200px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container-Users{
+    background-color:rgb(255, 225, 185);
+    margin: auto;
+    width: 200px;
+    min-height: 200px;
+    text-align: center;
+    margin-top: 50px;
+}

@@ -1,0 +1,19 @@
+<h1>Agregar productos</h1>
+
+
+{{#each errors}}
+    <div class="alert alert-danger" role="alert">
+        {{msg}}
+    </div>
+{{/each}}
+
+
+<form action="/addProducts" method="post">
+    <input type="text" id="title" name="title" placeholder="Ingrese titulo del producto" />
+    <input type="text" id="price" name="price" placeholder="Ingrese precio del producto" />
+    <input type="text" id="thumbnail" name="thumbnail" placeholder="Ingrese la imagen del producto" />
+    <input type="text" id="description" name="description" placeholder="Ingrese la descripcion del producto" />
+    <input type="text" id="category" name="category" placeholder="Ingrese la categoria del producto" />
+    <input type="submit" value="Enviar" />
+</form>
+

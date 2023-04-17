@@ -1,0 +1,9 @@
+<form action="/products/edit/{{productSerched._id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT" />
+    <input type="text" id="title" name="title"  value="{{productSerched.title}}"/>
+    <input type="text" id="price" name="price"  value="{{productSerched.price}}"/>
+    <input type="text" id="thumbnail" name="thumbnail"  value="{{productSerched.thumbnail}}"/>
+    <input type="text" id="description" name="description"  value="{{productSerched.description}}"/>
+    <input type="text" id="category" name="category"  value="{{productSerched.category}}"/>
+    <input type="submit" value="Editar" />
+</form> 

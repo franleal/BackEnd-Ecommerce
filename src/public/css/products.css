@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(255, 201, 151);
+}
+
+.card-css{
+    background-color: rgb(136, 189, 185);
+    margin: auto;
+    
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
