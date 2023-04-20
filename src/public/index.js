@@ -46,5 +46,25 @@ $(function(){
 
 })
 
+// $(async function saveOrder() {
+//     console.log('save order')
+//     const email = document.getElementById('email').value
+//     const cartItem = await cart.find()
+
+//     const dataToSend = {
+//         email: email,
+//         items: [cartItem]
+//     }
+
+//     fetcher('/orders',{
+//         method: 'POST',
+//         headers:{
+//             'Content-Type': 'application/json'
+//         },
+//         body:JSON.stringify(dataToSend)
+//     })
+
+// })
+
 
 

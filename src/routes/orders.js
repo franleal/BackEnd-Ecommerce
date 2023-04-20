@@ -1,9 +1,9 @@
 const { Router } = require('express')
 const router = Router()
 
-const { getOrders,getsOrderProducts,sendEmail } = require('../controllers/orders.Controller')
+const { getOrders,addOrder,sendEmail } = require('../controllers/orders.Controller')
 
-router.get('/orders',getsOrderProducts )
+router.get('/orders',addOrder )
 
 router.get('/ordersView',getOrders )
 

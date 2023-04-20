@@ -1,23 +1,36 @@
 const ordersController = {}
 const nodemailer = require('nodemailer')
-const cart = require('../models/cart.Model')
 const order = require('../models/orders.Model')
 const user = require('../models/User')
+const cart = require('../models/cart.Model')
 
 
-ordersController.getsOrderProducts =  async (req,res)=>{
+
+
+ordersController.addOrder =  async (req,res)=>{
+    
+    const items = await cart.find()
+    var cant = await order.count() 
+
     try{
-        
-        
-        const carProducts = await cart.find().lean()
-        console.log(order.length)
-        if (order.length > 0){
-           let numOrders = order.length + 1
-           const newOrder = new order({order:carProducts,numOrder:numOrders})
-            newOrder.save()
+        if(cant > 0){
+            cant = cant + 1
+            const objects = new order({
+                numOrder:cant,
+                objects:items
+            })
+            const newOrder = await objects.save()
+            console.log('Orden creada con exito')
+            console.log(newOrder)
         }else{
-            const newOrder = new order({order:carProducts,numOrder:1})
-            newOrder.save()
+            cant = 1
+            const objects = new order({
+                numOrder:cant,
+                objects:items
+            })
+            const newOrder = await objects.save()
+            console.log('Orden creada con exito')
+            console.log(newOrder)
         }
 
     }

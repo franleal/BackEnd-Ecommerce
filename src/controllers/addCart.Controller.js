@@ -9,14 +9,12 @@ addCartController.addProductInCart =  async (req,res)=>{
         const { title, price, thumbnail, description,category,amount } = req.body
         console.log(req.body)
         const estaEnProducts = await product.findOne({title})
-        console.log(estaEnProducts)
-
+        
         const estaEnCart = await cart.findOne({title})
-        console.log(estaEnCart)
-
+        
         if(!estaEnProducts){
             req.flash('error_msg', 'product not found')
-            console.log('product not found')
+            console.log('Producto no encontrado')
         }else if(!estaEnCart){
             
             const newProductInCart = new cart({ title, price, thumbnail, description,category,amount:1})
@@ -30,6 +28,10 @@ addCartController.addProductInCart =  async (req,res)=>{
                 newProductInCart.save();
             })
             Cart.push(newProductInCart)
+            console.log(`El producto ${newProductInCart} fue agregado al carrito con exito`)
+            res.redirect('/products')
+        }else{
+            console.log(`Este producto ya se encuentra en el carrito`)
             res.redirect('/products')
         }
        

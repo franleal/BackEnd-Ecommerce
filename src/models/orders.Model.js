@@ -2,12 +2,12 @@ const{Schema,model}= require('mongoose')
 
 
 const orderSchema = new Schema({
-    order:[{
-        type:Object,
-        ref:'Cart',
-        required: true
+    title:{ type: String, default: 'orden de compra'},
+    objects:[{
+        _id:false,
+        type: String
     }],
-    numOrder: { type: Number, required: true, max: 100},
+    numOrder: { type: Number, max: 100},
     estado: { type: String, default: 'generada'},
     // email: { type: String, required: true}
 },
